@@ -124,34 +124,37 @@ public class LiveActivity extends Activity implements View.OnClickListener {
                     case ILVLiveConstants.ILVLIVE_CMD_INVITE:
 //                        Toast.makeText(LiveActivity.this, "onNewCmdMsg : received a invitation! ", Toast.LENGTH_SHORT).show();
                         ILiveLog.d(TAG, "ILVB-LiveApp|received ");
-                        ILVLiveManager.getInstance().upToVideoMember("LiveGuest", true, true, new ILiveCallBack<ILVChangeRoleRes>() {
-                            @Override
-                            public void onSuccess(ILVChangeRoleRes data) {
+                        if (ILiveRoomManager.getInstance().isEnterRoom()) {
+                            ILVLiveManager.getInstance().upToVideoMember("LiveGuest", true, true, new ILiveCallBack<ILVChangeRoleRes>() {
+                                @Override
+                                public void onSuccess(ILVChangeRoleRes data) {
 
-                            }
+                                }
 
-                            @Override
-                            public void onError(String module, int errCode, String errMsg) {
+                                @Override
+                                public void onError(String module, int errCode, String errMsg) {
 
-                            }
-                        });
+                                }
+                            });
+                        }
                         break;
                     case ILVLiveConstants.ILVLIVE_CMD_INVITE_CANCEL:
 
                         break;
                     case ILVLiveConstants.ILVLIVE_CMD_INVITE_CLOSE:
-                        ILVLiveManager.getInstance().downToNorMember("Guest", new ILiveCallBack<ILVChangeRoleRes>() {
-                            @Override
-                            public void onSuccess(ILVChangeRoleRes data) {
+                        if (ILiveRoomManager.getInstance().isEnterRoom()) {
+                            ILVLiveManager.getInstance().downToNorMember("Guest", new ILiveCallBack<ILVChangeRoleRes>() {
+                                @Override
+                                public void onSuccess(ILVChangeRoleRes data) {
 
-                            }
+                                }
 
-                            @Override
-                            public void onError(String module, int errCode, String errMsg) {
+                                @Override
+                                public void onError(String module, int errCode, String errMsg) {
 
-                            }
-                        });
-
+                                }
+                            });
+                        }
                         break;
                     case ILVLiveConstants.ILVLIVE_CMD_INTERACT_AGREE:
                         break;
