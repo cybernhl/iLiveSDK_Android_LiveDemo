@@ -10,7 +10,10 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
      类似微信视频通话功能呢,支持多人同时上麦(最多4路)。[具体参考CallSDK](https://github.com/zhaoyang21cn/CallSDK)
 
 ## Demo
-本工程为ILiveSDK的示例工程
+本工程为ILiveSDK的示例工程，包含Demo：
+1、简单直播
+
+### 其它Demo
 [随心播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos.git)
 
 
